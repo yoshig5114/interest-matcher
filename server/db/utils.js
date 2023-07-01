@@ -1,4 +1,4 @@
-const { query } = require("express")
+
 const connection = require("./index")
 
 const query = (queryString, values)=>{

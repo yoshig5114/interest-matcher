@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const router = require('./routes');
 
 app.use(morgan('dev'));
-app.use('/api', router);
+app.use('/home', router);
 app.use(express.json());
 
 app.listen(config.port, () => {
