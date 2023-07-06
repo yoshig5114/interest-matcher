@@ -7,10 +7,11 @@ const {
     updateUser,
     deleteUser,
 
-} = require('../controllers/users');
-
+} = require('../controllers/users.controllers');
+// const users = require('../controllers/users.controllers')
 router.get('/', async (req, res) => {
     try {
+        console.log("GET /users");
         const data = await getAllUsers();
         res.json(data);
     }
