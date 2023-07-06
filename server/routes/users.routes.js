@@ -33,7 +33,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const { user_name, user_interests } = req.body;
-        await registerUser(user_name, user_interests);
+        const data = await registerUser(req.params.id, user_name, user_interests);
         res.status(201).json({ message: 'User registered successfully' });
     }
     catch (err) {
