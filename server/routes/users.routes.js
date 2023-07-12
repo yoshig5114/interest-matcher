@@ -32,8 +32,8 @@ router.get('/:id', async (req, res) => {
 })
 router.post('/', async (req, res) => {
     try {
-        const { user_name, user_interests } = req.body;
-        const data = await registerUser(req.params.id, user_name, user_interests);
+        const  user_name = req.body;
+        await registerUser(req.params.id, user_name);
         res.status(201).json({ message: 'User registered successfully' });
     }
     catch (err) {
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
-        const { user_name, user_interests } = req.body;
+        //const { user_name, user_interests } = req.body;
         await updateUser(req.params.id, user_name, user_interests);
         res.status(200).json({ message: 'User updated successfully' });
     }

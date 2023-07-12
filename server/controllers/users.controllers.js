@@ -6,8 +6,8 @@ const getAllUsers = async () => {
 const getUserById = async (user_id) => {
     return await query('SELECT * FROM users WHERE user_id = ?', [user_id])
 }
-const registerUser = async (user_interests, user_name) => {
-    return await query('INSERT INTO users (user_interests, user_name) VALUES (?, ?)', [user_interests, user_name])
+const registerUser = async (user_name) => {
+    return await query('INSERT INTO users SET user_name = ?', [ user_name])
 }
 const updateUser = async (user_interests, user_name, id) => {
     return await query('UPDATE users SET user_interests = ?, user_name = ? WHERE id = ?', [user_interests, user_name, id])
